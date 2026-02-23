@@ -1,36 +1,84 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ⚡️ Checklist: The Developer's Habit Architect
 
-## Getting Started
+A high-performance, minimalist habit tracking application designed specifically for developers. Build precision routines for **Dev**, **CS**, and **DSA** with a focus on consistency and speed.
 
-First, run the development server:
+![Checklist Dashboard](https://images.unsplash.com/photo-1484417894907-623942c8ee29?auto=format&fit=crop&q=80&w=2000)
 
+## 🚀 What is Checklist?
+
+Checklist is more than a simple to-do app; it's a **Protocol Architect**. It allows you to:
+- **Design Habit Protocols**: Create custom 4-column templates (initially Days, Dev, CS, and DSA) with full flexibility to add/remove nodes.
+- **Track with Precision**: Log your daily progress across multiple categories in a sleek, IDE-inspired grid.
+- **Time-Based Scheduling**: Select a deployment (start) date, and the system automatically maps out your entire routine with real dates.
+- **Public Share Nodes**: Generate "Notion-style" public, read-only links to share your consistency with the community.
+- **Multi-Auth Support**: Securely sign in via **GitHub** or **Google** with automatic account linking.
+
+## 🛠 Tech Stack
+
+Built with a modern, high-performance stack for a seamless developer experience:
+
+- **Framework**: [Next.js 15](https://nextjs.org/) (App Router, Server Components)
+- **Runtime**: [Bun](https://bun.sh/) (The ultra-fast JS runtime)
+- **Database**: [PostgreSQL](https://www.postgresql.org/)
+- **ORM**: [Prisma 7](https://www.prisma.io/)
+- **Authentication**: [Auth.js (NextAuth)](https://next-auth.js.org/) with Prisma Adapter
+- **Styling**: [Tailwind CSS 4](https://tailwindcss.com/)
+- **Theme Engine**: [Next-Themes](https://github.com/pacocoursey/next-themes) (Custom "True Black" & "Soft Light" modes)
+- **Icons**: [Lucide React](https://lucide.dev/)
+
+## 🎨 Aesthetic: "The Dark Room"
+
+The UI is designed for focus, utilizing a **True Black (#000000)** foundation in dark mode.
+- **Glassmorphism**: Subtle `backdrop-blur` effects on navbars and headers.
+- **Zinc Palette**: Professional Zinc-based grays for structured depth.
+- **Indigo Glow**: High-saturation accents for interactive feedback and primary actions.
+
+## 🏁 Getting Started
+
+### Prerequisites
+- [Bun](https://bun.sh/) installed locally.
+- A running [PostgreSQL](https://www.postgresql.org/) instance.
+- GitHub/Google OAuth credentials.
+
+### 1. Initialize the Lab
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
+# Install dependencies
+bun install
+```
+
+### 2. Configure Environment
+Copy `.env.example` to `.env` and provide your credentials:
+```bash
+cp .env.example .env
+```
+
+### 3. Deploy the Schema
+```bash
+# Push the Prisma schema to your DB
+bunx prisma db push
+```
+
+### 4. Ignite
+```bash
+# Start the development server
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🏗 Project Structure
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+src/
+├── app/                  # Next.js App Router
+│   ├── api/              # Auth & Template API Routes
+│   ├── auth/             # Custom "True Black" Sign-in Page
+│   ├── dashboard/        # Private Protocol Management
+│   ├── t/[token]/        # Public Share Nodes
+│   └── templates/        # Protocol Architect (New/Edit)
+├── components/           # Atomic UI Components
+└── lib/                  # Shared Utilities (Prisma Client, etc.)
+prisma/
+└── schema.prisma         # Core Data Models
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📜 License
+Built for builders. (ISC License)
