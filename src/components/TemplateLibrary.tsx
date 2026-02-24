@@ -59,7 +59,7 @@ const PRESET_TEMPLATES = [
       { id: "col-2", name: "Daily Journal" },
     ],
     days: 60,
-  }
+  },
 ];
 
 interface TemplateLibraryProps {
@@ -74,7 +74,8 @@ export default function TemplateLibrary({ onSelect }: TemplateLibraryProps) {
           Choose a Template
         </h1>
         <p className="text-muted-foreground text-lg font-medium leading-relaxed">
-          Select a starting point for your journey. You can fully customize every detail in the next step.
+          Select a starting point for your journey. You can fully customize
+          every detail in the next step.
         </p>
       </div>
 
@@ -85,14 +86,16 @@ export default function TemplateLibrary({ onSelect }: TemplateLibraryProps) {
             onClick={() => onSelect(template)}
             className="group relative flex flex-col text-left bg-card rounded-2xl border border-border p-6 hover:border-primary hover:shadow-2xl transition-all duration-300 active:scale-95"
           >
-            <div className={`w-12 h-12 rounded-xl ${template.bg} ${template.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+            <div
+              className={`w-12 h-12 rounded-xl ${template.bg} ${template.color} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
+            >
               <template.icon className="w-6 h-6" />
             </div>
-            
+
             <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
               {template.name}
             </h3>
-            
+
             <p className="text-muted-foreground text-sm font-medium leading-relaxed mb-6 flex-1">
               {template.description}
             </p>
@@ -104,7 +107,9 @@ export default function TemplateLibrary({ onSelect }: TemplateLibraryProps) {
               </div>
               <div className="flex items-center justify-between text-[10px] font-black uppercase tracking-widest text-muted-foreground">
                 <span>Columns</span>
-                <span className="text-foreground">{template.columns.length}</span>
+                <span className="text-foreground">
+                  {template.columns.length}
+                </span>
               </div>
             </div>
 
@@ -117,7 +122,9 @@ export default function TemplateLibrary({ onSelect }: TemplateLibraryProps) {
 
       <div className="flex justify-center pt-8">
         <button
-          onClick={() => onSelect({ name: "Custom Protocol", columns: [], days: 30 })}
+          onClick={() =>
+            onSelect({ name: "Custom Protocol", columns: [], days: 30 })
+          }
           className="text-sm font-bold text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 group"
         >
           <Layout className="w-4 h-4" />
